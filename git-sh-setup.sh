@@ -178,7 +178,7 @@ sane_grep () {
 }
 
 sane_egrep () {
-	GREP_OPTIONS= LC_ALL=C egrep @@SANE_TEXT_GREP@@ "$@"
+	GREP_OPTIONS= LC_ALL=C grep -E @@SANE_TEXT_GREP@@ "$@"
 }
 
 is_bare_repository () {

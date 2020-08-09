@@ -1435,7 +1435,7 @@ test_expect_success $PREREQ 'asks about and fixes 8bit encodings' '
 	grep "do not declare a Content-Transfer-Encoding" stdout &&
 	grep email-using-8bit stdout &&
 	grep "Which 8bit encoding" stdout &&
-	egrep "Content|MIME" msgtxt1 >actual &&
+	grep -E "Content|MIME" msgtxt1 >actual &&
 	test_cmp content-type-decl actual
 '
 
@@ -1446,7 +1446,7 @@ test_expect_success $PREREQ 'sendemail.8bitEncoding works' '
 	git send-email --from=author@example.com --to=nobody@example.com \
 			--smtp-server="$(pwd)/fake.sendmail" \
 			email-using-8bit >stdout &&
-	egrep "Content|MIME" msgtxt1 >actual &&
+	grep -E "Content|MIME" msgtxt1 >actual &&
 	test_cmp content-type-decl actual
 '
 
@@ -1458,7 +1458,7 @@ test_expect_success $PREREQ '--8bit-encoding overrides sendemail.8bitEncoding' '
 			--smtp-server="$(pwd)/fake.sendmail" \
 			--8bit-encoding=UTF-8 \
 			email-using-8bit >stdout &&
-	egrep "Content|MIME" msgtxt1 >actual &&
+	grep -E "Content|MIME" msgtxt1 >actual &&
 	test_cmp content-type-decl actual
 '
 

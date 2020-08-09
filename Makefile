@@ -310,7 +310,7 @@ all::
 # Define NO_TCLTK if you do not want Tcl/Tk GUI.
 #
 # Define SANE_TEXT_GREP to "-a" if you use recent versions of GNU grep
-# and egrep that are pickier when their input contains non-ASCII data.
+# that are pickier when their input contains non-ASCII data.
 #
 # The TCL_PATH variable governs the location of the Tcl interpreter
 # used to optimize git-gui for your system.  Only used if NO_TCLTK
